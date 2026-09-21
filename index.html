@@ -4,193 +4,292 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shruti Halde | Software Engineer</title>
-  <meta name="description" content="Portfolio of Shruti Halde, Software Engineer specializing in backend systems, Java, Spring Boot, AWS, and scalable microservices." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Portfolio of Shruti Halde, software engineer specializing in backend systems, Java, Spring Boot, Python, FastAPI, AWS, and scalable microservices." />
+  <meta name="theme-color" content="#EDF1F1" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shruti Halde | Software Engineer" />
+  <meta property="og:description" content="Backend systems, REST APIs, microservices, and cloud-native applications. USC M.S. Computer Science, 2026." />
+  <meta property="og:image" content="https://shruti0603.github.io/images/Shruti-profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1B2B'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23EDF1F1'%3ESH%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts are self-hosted (see fonts/LICENSES.txt) -->
+  <link rel="preload" href="fonts/BricolageGrotesque-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/SourceSerif4-var.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Lets the stylesheet know JavaScript is available, so the mobile menu only collapses when it can open -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shruti Halde",
+    "jobTitle": "Software Engineer",
+    "email": "mailto:shrutihalde06@gmail.com",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Southern California" },
+      { "@type": "CollegeOrUniversity", "name": "MCT's Rajiv Gandhi Institute of Technology" }
+    ],
+    "knowsAbout": ["Backend engineering", "REST APIs", "Microservices", "Java", "Spring Boot", "Python", "FastAPI", "AWS", "Kubernetes"],
+    "sameAs": [
+      "https://www.linkedin.com/in/shrruti-halde-7b5a83209/",
+      "https://github.com/shruti0603"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
       <a href="#home" class="logo">Shruti Halde</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-      <nav id="navMenu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+
+      <button class="menu-button" id="menuToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr-only">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero section">
+  <main id="main">
+    <section id="home" class="hero" aria-label="Introduction">
       <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Software Engineer</p>
-          <h1>Building scalable backend systems, APIs, automation solutions, and cloud-native applications.</h1>
-          <p class="hero-text">
-            I’m Shruti Halde, a USC M.S. Computer Science graduate and software engineer focused on scalable backend services, REST APIs, microservices, cloud systems, and production automation.
+        <div class="hero-copy">
+          <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to software engineering roles</p>
+
+          <h1 class="hero-name"><span>Shruti</span> <span>Halde</span></h1>
+
+          <p class="hero-role">Software engineer building scalable backend systems, APIs, and cloud-native applications.</p>
+          <p class="hero-note">
+            USC M.S. Computer Science graduate. Moved monolithic apps to Spring Boot microservices at <strong class="metric">99.9%</strong> availability and built APIs handling up to <strong class="metric">1M records a day</strong>.
           </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="ShrutiHaldeResume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="btn btn-primary" href="ShrutiHaldeResume.pdf" target="_blank" rel="noopener">Download résumé</a>
+            <a class="btn btn-secondary" href="#projects">View projects</a>
           </div>
         </div>
-        <div class="hero-card profile-card">
-          <img src="images/Shruti-profile.jpg" alt="Shruti Halde" class="profile-photo" />
-          <div class="stat">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years of experience</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">99.9%</span>
-            <span class="stat-label">System availability delivered</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">1M+</span>
-            <span class="stat-label">Daily records handled</span>
-          </div>
-        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="images/Shruti-profile.jpg"
+            srcset="images/Shruti-profile-640.jpg 640w, images/Shruti-profile-960.jpg 960w, images/Shruti-profile.jpg 1200w"
+            sizes="(min-width: 720px) min(38vw, 26rem), min(100vw - 2.5rem, 26rem)"
+            width="1200" height="1524"
+            alt="Portrait of Shruti Halde in a navy blazer"
+            fetchpriority="high"
+            decoding="async" />
+        </figure>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">About Me</p>
-          <h2>Backend-focused engineer with production experience</h2>
-        </div>
-        <div class="card about-card">
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container split">
+        <h2 class="split-title" id="about-title">About</h2>
+        <div class="split-body prose">
+          <p class="lead">Backend-focused engineer with production experience.</p>
           <p>
-            I have experience designing backend services, REST APIs, and microservices using Python, Java, FastAPI, and Spring Boot, while improving API performance, deployment efficiency, and system stability across production workloads. My work spans AWS-based systems, databases, CI/CD pipelines, containerized deployments, automation utilities, and production support workflows.
+            I design backend services, REST APIs, and microservices in Python, Java, FastAPI, and Spring Boot, and I improve API performance, deployment efficiency, and system stability across production workloads. My work spans AWS-based systems, databases, CI/CD pipelines, containerized deployments, automation utilities, and production support.
           </p>
           <p>
-            I completed my M.S. in Computer Science at the University of Southern California in May 2026. I enjoy building reliable systems end to end—from API and database design to containerized cloud deployments—and I’m seeking software engineering opportunities where I can contribute to scalable, meaningful products.
+            I completed my M.S. in Computer Science at the University of Southern California in May 2026. I like building reliable systems end to end, from API and database design to containerized cloud deployments, and I’m looking for software engineering roles where I can contribute to scalable, meaningful products.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section alt-bg">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2>Technologies I work with</h2>
-        </div>
-        <div class="skills-grid">
-          <article class="card skill-card">
-            <h3>Languages</h3>
-            <p>Python, Java, SQL, JavaScript, Bash</p>
-          </article>
-          <article class="card skill-card">
-            <h3>Backend</h3>
-            <p>FastAPI, Flask, Django, Spring Boot, Spring MVC, REST APIs, Microservices, Authentication, RBAC, JSON, Async Processing</p>
-          </article>
-          <article class="card skill-card">
-            <h3>Cloud & DevOps</h3>
-            <p>AWS EC2, S3, Lambda, Docker, Kubernetes, Jenkins, GitHub Actions, CI/CD</p>
-          </article>
-          <article class="card skill-card">
-            <h3>Databases & Tools</h3>
-            <p>PostgreSQL, MySQL, MongoDB, Redis, Maven, Git, GitHub, Linux, Postman, Jira</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-heading"><p class="eyebrow">Experience</p><h2>Professional background</h2></div>
-        <div class="timeline">
-          <article class="card timeline-item">
-            <div class="timeline-top"><h3>Software Engineer · Hubcom Techno System LLP</h3><span>May 2022 – Jul 2024 · Mumbai, India</span></div>
-            <ul>
-              <li>Re-architected monolithic enterprise applications into Java Spring Boot microservices, improving service availability to 99.9% and reducing production downtime by 40%.</li>
-              <li>Designed REST APIs with Java, Spring Boot, Python, FastAPI, and Flask processing up to 1M records/day, improving data exchange efficiency by 46%.</li>
-              <li>Implemented Kafka-based event-driven workflows and optimized PostgreSQL and MongoDB performance by 37% through indexing, query tuning, and schema refinements.</li>
-              <li>Containerized services with Docker, deployed Kubernetes workloads, and built automated testing/deployment workflows with JUnit, Mockito, Postman, Jenkins CI/CD, and Git.</li>
-            </ul>
-          </article>
-          <article class="card timeline-item">
-            <div class="timeline-top"><h3>Data Analyst Intern · Trent Ltd. – A TATA Enterprise</h3><span>May 2025 – Jun 2025 · Mumbai, India</span></div>
-            <ul>
-              <li>Developed an Inventory Management dashboard using Power BI and SQL to improve stock visibility, inventory tracking, and operational decision-making.</li>
-              <li>Built automated ETL and reporting workflows using SQL Server, Python/Pandas, Power Automate, SharePoint, and Power BI Report Builder.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section alt-bg">
-      <div class="container">
-        <div class="section-heading"><p class="eyebrow">Projects</p><h2>Selected work</h2></div>
-        <div class="projects-grid">
-          <article class="card project-card">
-            <div class="project-tag">Python · T5 · SQL-BART · Streamlit</div><h3>QueryBot – Natural Language to SQL</h3>
-            <p>Developed an NLP-to-SQL semantic parsing system fine-tuned on the Spider dataset. Improved query-generation accuracy by 12% through schema-aware linking and deployed an interactive Streamlit application.</p>
-            <a class="project-link" href="https://github.com/shruti0603?tab=repositories" target="_blank" rel="noopener">Explore on GitHub ↗</a>
-          </article>
-          <article class="card project-card">
-            <div class="project-tag">Python · Flask · REST APIs · Cloud</div><h3>Weather Forecasting Application</h3>
-            <p>Built a Flask backend integrating geolocation and weather APIs to collect, transform, and serve real-time location-based forecast data through REST endpoints and interactive visualizations.</p>
-            <a class="project-link" href="https://github.com/shruti0603?tab=repositories" target="_blank" rel="noopener">Explore on GitHub ↗</a>
-          </article>
-          <article class="card project-card">
-            <div class="project-tag">Python · OpenCV · MySQL</div><h3>Attendance System – Facial Recognition</h3>
-            <p>Developed a real-time facial-recognition attendance system using Python and OpenCV with a MySQL backend for automated identity matching, attendance logging, and persistent record storage.</p>
-            <a class="project-link" href="https://github.com/shruti0603/Attendance_System_Facial_recognition" target="_blank" rel="noopener">View Repository ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Education</p>
-          <h2>Academic background</h2>
-        </div>
-        <div class="education-grid">
-          <article class="card education-card">
-            <h3>University of Southern California</h3>
-            <p>Master of Science in Computer Science · GPA: 3.52/4.00</p>
-            <span>Aug 2024 – May 2026 · Los Angeles, CA</span>
-          </article>
-          <article class="card education-card">
-            <h3>MCT's Rajiv Gandhi Institute of Technology</h3>
-            <p>Bachelor of Engineering in Computer Engineering · CGPA: 9.76/10 · University Rank 1</p>
-            <span>Aug 2019 – Jun 2023 · Mumbai, India</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section alt-bg">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s connect</h2>
-        </div>
-        <div class="card contact-card">
-          <p>I’m open to software engineering opportunities, especially backend systems, APIs, automation, cloud-native applications, and platform-focused roles.</p>
-          <div class="contact-links">
-            <a href="mailto:shrutihalde06@gmail.com">shrutihalde06@gmail.com</a>
-            <a href="https://www.linkedin.com/in/shrruti-halde-7b5a83209/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/shruti0603" target="_blank" rel="noopener">GitHub</a>
-            <a href="ShrutiHaldeResume.pdf" target="_blank" rel="noopener">Resume</a>
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container split">
+        <h2 class="split-title" id="skills-title">Skills</h2>
+        <dl class="skills">
+          <div class="skills-row">
+            <dt>Languages</dt>
+            <dd><strong>Python</strong>, <strong>Java</strong>, <strong>SQL</strong>, JavaScript, Bash, C, HTML/CSS</dd>
           </div>
+          <div class="skills-row">
+            <dt>Backend &amp; APIs</dt>
+            <dd><strong>Spring Boot</strong>, <strong>FastAPI</strong>, Spring MVC, Flask, Django, REST APIs, Microservices, Apache Kafka, Authentication, RBAC, JSON, Async processing</dd>
+          </div>
+          <div class="skills-row">
+            <dt>Cloud &amp; DevOps</dt>
+            <dd><strong>AWS</strong> (EC2, S3, Lambda), <strong>Docker</strong>, <strong>Kubernetes</strong>, GCP, Jenkins, GitHub Actions, CI/CD, Grafana</dd>
+          </div>
+          <div class="skills-row">
+            <dt>Databases</dt>
+            <dd>PostgreSQL, MySQL, MongoDB, Redis, SQL Server, Firebase</dd>
+          </div>
+          <div class="skills-row">
+            <dt>Testing &amp; tools</dt>
+            <dd>JUnit, Mockito, PyTest, Postman, Git, GitHub, Maven, Linux, Jira</dd>
+          </div>
+          <div class="skills-row">
+            <dt>Data &amp; analytics</dt>
+            <dd>Pandas, NumPy, ETL pipelines, Power BI, Scikit-learn, TensorFlow</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container split">
+        <h2 class="split-title" id="experience-title">Experience</h2>
+        <div class="split-body">
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>Software Engineer</h3>
+                <p class="entry-org">Hubcom Techno System LLP</p>
+              </div>
+              <p class="entry-meta">May 2022 – Jul 2024<br />Mumbai, India</p>
+            </header>
+            <ul class="points">
+              <li>Re-architected monolithic enterprise applications into Java Spring Boot microservices, raising availability to <strong class="metric">99.9%</strong> and cutting production downtime by <strong class="metric">40%</strong> through fault isolation, health checks, and resilient service design.</li>
+              <li>Built REST APIs in Java, Spring Boot, Python, FastAPI, and Flask that process up to <strong class="metric">1M records/day</strong>, improving data-exchange efficiency by <strong class="metric">46%</strong> with pagination, payload optimization, and asynchronous processing.</li>
+              <li>Implemented Apache Kafka event-driven workflows across distributed microservices, improving decoupling, scalability, and reliability for real-time data processing.</li>
+              <li>Improved PostgreSQL and MongoDB performance by <strong class="metric">37%</strong> through indexing, query optimization, execution-plan analysis, and schema refinements.</li>
+              <li>Containerized services with Docker and deployed them on Kubernetes with rolling updates, health checks, and automated recovery.</li>
+              <li>Automated testing and deployment with JUnit, Mockito, Postman, Jenkins CI/CD, and Git, taking releases from <strong class="metric">weekly to daily</strong> while keeping production stable.</li>
+              <li>Wrote Python automation utilities for batch validation and reporting, and used Grafana monitoring and structured logging to resolve production issues faster.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>Data Analyst Intern</h3>
+                <p class="entry-org">Trent Ltd., a TATA Enterprise</p>
+              </div>
+              <p class="entry-meta">May 2025 – Jun 2025<br />Mumbai, India</p>
+            </header>
+            <ul class="points">
+              <li>Developed an Inventory Management dashboard with Power BI and SQL to improve stock visibility, inventory tracking, and operational decision-making.</li>
+              <li>Built automated ETL and reporting workflows with SQL Server, Python/Pandas, Power Automate, SharePoint, and Power BI Report Builder.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container split">
+        <h2 class="split-title" id="projects-title">Projects</h2>
+        <div class="split-body">
+          <article class="project">
+            <div class="project-head">
+              <h3>QueryBot: Natural Language to SQL</h3>
+              <p class="project-date">Jan – May 2025</p>
+            </div>
+            <p class="project-tech">Python, T5, SQL-BART, Streamlit</p>
+            <p>Built an NLP-to-SQL semantic parsing system fine-tuned on the Spider dataset. Schema-aware linking improved query-generation accuracy by <strong class="metric">12%</strong>, and an interactive Streamlit app lets you run queries and evaluate accuracy.</p>
+            <a class="text-link" href="https://github.com/shruti0603?tab=repositories" target="_blank" rel="noopener">View on GitHub<span class="sr-only">: QueryBot</span></a>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <h3>Weather Forecasting Application</h3>
+              <p class="project-date">Aug – Dec 2024</p>
+            </div>
+            <p class="project-tech">Python, Flask, REST APIs, Cloud</p>
+            <p>Built a Flask backend that integrates geolocation and weather APIs to collect, transform, and serve real-time, location-based forecasts through REST endpoints and interactive visualizations.</p>
+            <a class="text-link" href="https://github.com/shruti0603?tab=repositories" target="_blank" rel="noopener">View on GitHub<span class="sr-only">: Weather Forecasting Application</span></a>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <h3>Attendance System: Facial Recognition</h3>
+              <p class="project-date">Aug 2021 – May 2022</p>
+            </div>
+            <p class="project-tech">Python, OpenCV, MySQL</p>
+            <p>Built a real-time facial-recognition attendance system with Python and OpenCV and a MySQL backend for automated identity matching, attendance logging, and persistent record storage.</p>
+            <a class="text-link" href="https://github.com/shruti0603/Attendance_System_Facial_recognition" target="_blank" rel="noopener">View on GitHub<span class="sr-only">: Attendance System</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="container split">
+        <h2 class="split-title" id="education-title">Education</h2>
+        <div class="split-body">
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>University of Southern California</h3>
+                <p class="entry-org">Master of Science in Computer Science</p>
+              </div>
+              <p class="entry-meta">Aug 2024 – May 2026<br />Los Angeles, CA</p>
+            </header>
+            <p class="detail">GPA: <strong class="metric">3.52/4.00</strong></p>
+          </article>
+
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>MCT’s Rajiv Gandhi Institute of Technology</h3>
+                <p class="entry-org">Bachelor of Engineering in Computer Engineering</p>
+              </div>
+              <p class="entry-meta">Aug 2019 – Jun 2023<br />Mumbai, India</p>
+            </header>
+            <p class="detail">CGPA: <strong class="metric">9.76/10</strong>, <strong class="metric">University Rank 1</strong></p>
+          </article>
+
+          <dl class="extras">
+            <div class="skills-row">
+              <dt>Publication</dt>
+              <dd>Multiple Disease Prediction Using Machine Learning, IC-ICN 2023</dd>
+            </div>
+            <div class="skills-row">
+              <dt>Certifications</dt>
+              <dd>Google Data Analytics Professional Certificate, Google Project Management Professional Certificate, DeepLearning.AI Mathematics for ML &amp; Data Science, Elements of AI</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-dark" aria-labelledby="contact-title">
+      <div class="container split">
+        <h2 class="split-title" id="contact-title">Contact</h2>
+        <div class="split-body">
+          <p class="contact-lead">I’m open to software engineering opportunities, especially backend systems, APIs, automation, cloud-native applications, and platform-focused roles.</p>
+
+          <p class="contact-email-row">
+            <a class="contact-email" href="mailto:shrutihalde06@gmail.com">shrutihalde06@gmail.com</a>
+            <button class="btn btn-ghost" id="copyEmail" type="button" data-email="shrutihalde06@gmail.com" hidden>Copy email</button>
+            <span class="sr-only" id="copyStatus" role="status" aria-live="polite"></span>
+          </p>
+
+          <ul class="contact-links">
+            <li><a class="text-link" href="https://www.linkedin.com/in/shrruti-halde-7b5a83209/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="text-link" href="https://github.com/shruti0603" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="text-link" href="ShrutiHaldeResume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Shruti Halde. Built with HTML, CSS, and JavaScript.</p>
+      <p>© <span id="year">2026</span> Shruti Halde</p>
+      <a class="footer-link" href="#home">Back to top</a>
     </div>
   </footer>
 

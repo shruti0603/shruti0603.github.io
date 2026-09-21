@@ -549,3 +549,103 @@ span {
     font-size: .76rem;
   }
 }
+
+
+/* ===== TRUE ONE-SCREEN DESKTOP HERO FIX =====
+   Removes vertical centering that was creating the large empty area above the hero.
+*/
+@media (min-width: 901px) {
+  .hero {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 34px 0 38px !important;
+    display: block !important;
+    align-items: initial !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) 310px !important;
+    gap: 48px !important;
+    align-items: start !important;
+  }
+
+  .hero-grid > div:first-child {
+    padding-top: 18px !important;
+  }
+
+  .eyebrow {
+    margin: 0 0 8px !important;
+  }
+
+  h1 {
+    max-width: 760px !important;
+    margin: 0 0 14px !important;
+    font-size: clamp(2.45rem, 3.25vw, 3.35rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  .hero-text {
+    max-width: 700px !important;
+    margin: 0 !important;
+    font-size: .96rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .hero-actions {
+    margin-top: 18px !important;
+  }
+
+  .hero-card.profile-card {
+    width: 310px !important;
+    max-width: 310px !important;
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+
+  .profile-photo {
+    width: 155px !important;
+    height: 190px !important;
+    max-height: 190px !important;
+    margin: 0 auto 2px !important;
+    object-fit: cover !important;
+    object-position: 50% 15% !important;
+  }
+
+  .stat {
+    min-height: 0 !important;
+    padding: 7px 10px !important;
+  }
+
+  .stat-number {
+    font-size: 1.2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .stat-label {
+    margin-top: 2px !important;
+    font-size: .75rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
+/* Keep the hero especially compact on normal laptop-height browsers. */
+@media (min-width: 901px) and (max-height: 900px) {
+  .hero {
+    padding-top: 26px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero-grid > div:first-child {
+    padding-top: 8px !important;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 3vw, 3.05rem) !important;
+  }
+
+  .profile-photo {
+    width: 145px !important;
+    height: 175px !important;
+    max-height: 175px !important;
+  }
+}

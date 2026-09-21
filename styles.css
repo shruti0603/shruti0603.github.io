@@ -1,24 +1,42 @@
+/* Shruti Halde Portfolio - final responsive stylesheet */
+
 :root {
-  --bg: #0b1020;
-  --bg-soft: #121a31;
-  --card: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --text: #e8ecf4;
-  --muted: #aab5c7;
-  --accent: #7c9cff;
-  --accent-strong: #5d84ff;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
-  --radius: 20px;
-  --max-width: 1120px;
+  --bg: #08101f;
+  --bg2: #0d1730;
+  --card: #111b31;
+  --border: rgba(255,255,255,.10);
+  --text: #f3f6fb;
+  --muted: #aeb9cc;
+  --accent: #668cff;
+  --accent2: #5379f4;
+  --radius: 18px;
+  --max: 1180px;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #09101e 0%, #0f1830 100%);
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
   color: var(--text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
@@ -27,47 +45,53 @@ a {
 }
 
 .container {
-  width: min(92%, var(--max-width));
-  margin: 0 auto;
+  width: calc(100% - 48px);
+  max-width: var(--max);
+  margin-inline: auto;
 }
 
 .section {
-  padding: 88px 0;
+  padding: 82px 0;
 }
 
 .alt-bg {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255,255,255,.02);
 }
 
+/* Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(14px);
-  background: rgba(8, 12, 24, 0.72);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8,16,31,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav {
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 76px;
+  gap: 30px;
 }
 
 .logo {
+  color: var(--text);
+  font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 nav {
   display: flex;
+  align-items: center;
   gap: 28px;
 }
 
 nav a {
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 nav a:hover {
@@ -76,67 +100,75 @@ nav a:hover {
 
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  border: 0;
   background: transparent;
-  border: none;
   color: var(--text);
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
+/* Hero */
 .hero {
-  padding-top: 110px;
+  padding: 72px 0 88px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.9fr;
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 390px);
+  gap: 56px;
   align-items: center;
+}
+
+.hero-grid > * {
+  min-width: 0;
 }
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 14px;
+  margin: 0 0 14px;
   color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  font-size: 0.82rem;
 }
 
 h1 {
-  font-size: clamp(2.3rem, 5vw, 4.25rem);
-  line-height: 1.08;
-  margin: 0 0 18px;
-  letter-spacing: -0.04em;
+  margin: 0 0 20px;
+  max-width: 760px;
+  font-size: clamp(2.45rem, 4.5vw, 4.2rem);
+  line-height: 1.07;
+  letter-spacing: -.045em;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
   margin: 0;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -.03em;
 }
 
 h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   font-size: 1.18rem;
 }
 
-p, li, span {
+p,
+li,
+span {
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .hero-text {
-  max-width: 720px;
-  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0;
+  font-size: 1.06rem;
 }
 
 .hero-actions {
   display: flex;
-  gap: 14px;
   flex-wrap: wrap;
+  gap: 14px;
   margin-top: 28px;
 }
 
@@ -144,56 +176,78 @@ p, li, span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 22px;
+  padding: 13px 22px;
   border-radius: 999px;
-  font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
+  font-weight: 800;
 }
 
 .btn-primary {
-  background: var(--accent-strong);
-  color: white;
+  background: var(--accent2);
+  color: #fff;
 }
 
 .btn-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.035);
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--card-border);
+/* Profile card: deliberately compact so it always fits the viewport */
+.hero-card.profile-card {
+  width: 100%;
+  max-width: 390px;
+  justify-self: end;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,.055);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 18px 48px rgba(0,0,0,.24);
 }
 
-.hero-card {
-  padding: 26px;
-  display: grid;
-  gap: 18px;
+.profile-photo {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 390px !important;
+  aspect-ratio: 4 / 5;
+  object-fit: cover !important;
+  object-position: center 18% !important;
+  border-radius: 14px;
+  margin: 0 !important;
 }
 
 .stat {
-  padding: 18px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.075);
+  border-radius: 14px;
 }
 
 .stat-number {
   display: block;
   color: var(--text);
-  font-size: 2rem;
+  font-size: 1.65rem;
   font-weight: 800;
+  line-height: 1.15;
 }
 
 .stat-label {
   display: block;
-  margin-top: 4px;
+  margin-top: 3px;
+  font-size: .92rem;
+}
+
+/* General cards */
+.card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
 }
 
 .section-heading {
@@ -223,8 +277,19 @@ p, li, span {
   display: inline-block;
   margin-bottom: 14px;
   color: var(--accent);
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.project-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
 
 .timeline {
@@ -240,8 +305,8 @@ p, li, span {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 10px;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .timeline-top h3,
@@ -263,20 +328,38 @@ p, li, span {
 
 .contact-links a {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footer {
   padding: 26px 0 36px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border);
 }
 
 .footer-inner {
   text-align: center;
 }
 
-@media (max-width: 860px) {
-  .hero-grid,
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .hero {
+    padding-top: 54px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .hero-card.profile-card {
+    width: min(100%, 390px);
+    justify-self: center;
+  }
+
   .skills-grid,
   .projects-grid,
   .education-grid {
@@ -289,15 +372,16 @@ p, li, span {
 
   nav {
     position: absolute;
-    top: 76px;
+    top: 74px;
     left: 0;
     right: 0;
     display: none;
     flex-direction: column;
+    align-items: flex-start;
     gap: 18px;
-    padding: 20px 4%;
-    background: rgba(8, 12, 24, 0.97);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 5%;
+    background: rgba(8,16,31,.98);
+    border-bottom: 1px solid var(--border);
   }
 
   nav.open {
@@ -305,121 +389,47 @@ p, li, span {
   }
 }
 
+/* Phone */
 @media (max-width: 560px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
   .section {
-    padding: 72px 0;
+    padding: 64px 0;
+  }
+
+  .hero {
+    padding-top: 42px;
   }
 
   h1 {
-    font-size: 2.35rem;
+    font-size: clamp(2.15rem, 11vw, 2.75rem);
   }
 
   .hero-actions {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .btn {
     width: 100%;
   }
-}
- 
 
-.profile-card { align-items:center; text-align:center; }
-.profile-photo { width:220px; height:220px; object-fit:cover; object-position:50% 25%; border-radius:50%; margin:0 auto 24px; display:block; box-shadow:0 14px 35px rgba(15,23,42,.16); border:5px solid #fff; }
-.project-link { display:inline-flex; margin-top:16px; font-weight:700; color:var(--primary); text-decoration:none; }
-.project-link:hover { text-decoration:underline; }
-@media (max-width: 700px) { .profile-photo { width:180px; height:180px; } }
-
-
-/* ===== HERO / PROFILE IMAGE FIX ===== */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hero {
-  padding-top: 80px;
-  overflow: hidden;
-}
-
-.hero-grid {
-  width: 100%;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 380px);
-  gap: 48px;
-  align-items: center;
-}
-
-.hero-grid > * {
-  min-width: 0;
-}
-
-.profile-card {
-  width: 100%;
-  max-width: 380px;
-  justify-self: end;
-  padding: 22px;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.profile-photo {
-  display: block !important;
-  width: 210px !important;
-  height: 260px !important;
-  max-width: 100% !important;
-  object-fit: cover !important;
-  object-position: 50% 18% !important;
-  border-radius: 18px !important;
-  margin: 0 auto 6px !important;
-  border: 3px solid rgba(255, 255, 255, 0.14) !important;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28) !important;
-}
-
-.profile-card .stat {
-  width: 100%;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    padding-top: 60px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .profile-card {
-    width: min(100%, 420px);
-    max-width: 420px;
-    justify-self: center;
+  .hero-card.profile-card {
+    max-width: 340px;
+    padding: 16px;
   }
 
   .profile-photo {
-    width: 200px !important;
-    height: 250px !important;
-  }
-}
-
-@media (max-width: 560px) {
-  .container {
-    width: min(92%, 100%);
+    max-height: 330px !important;
   }
 
-  .hero-grid {
-    gap: 28px;
-  }
-
-  .profile-card {
-    width: 100%;
-    padding: 18px;
-  }
-
-  .profile-photo {
-    width: 170px !important;
-    height: 215px !important;
+  .about-card,
+  .contact-card,
+  .skill-card,
+  .project-card,
+  .education-card,
+  .timeline-item {
+    padding: 20px;
   }
 }

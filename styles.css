@@ -325,53 +325,101 @@ p, li, span {
 }
  
 
+.profile-card { align-items:center; text-align:center; }
+.profile-photo { width:220px; height:220px; object-fit:cover; object-position:50% 25%; border-radius:50%; margin:0 auto 24px; display:block; box-shadow:0 14px 35px rgba(15,23,42,.16); border:5px solid #fff; }
+.project-link { display:inline-flex; margin-top:16px; font-weight:700; color:var(--primary); text-decoration:none; }
+.project-link:hover { text-decoration:underline; }
+@media (max-width: 700px) { .profile-photo { width:180px; height:180px; } }
+
+
+/* ===== HERO / PROFILE IMAGE FIX ===== */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  width: 100%;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 380px);
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-grid > * {
+  min-width: 0;
+}
+
 .profile-card {
+  width: 100%;
+  max-width: 380px;
+  justify-self: end;
+  padding: 22px;
   align-items: center;
   text-align: center;
-  width: 100%;
-  max-width: 390px;
-  justify-self: end;
+  overflow: hidden;
 }
 
 .profile-photo {
-  width: 230px;
-  height: 290px;
-  object-fit: cover;
-  object-position: 50% 20%;
-  border-radius: 22px;
-  margin: 0 auto 8px;
-  display: block;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-  border: 3px solid rgba(255, 255, 255, 0.16);
+  display: block !important;
+  width: 210px !important;
+  height: 260px !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 18% !important;
+  border-radius: 18px !important;
+  margin: 0 auto 6px !important;
+  border: 3px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28) !important;
 }
 
-.project-link {
-  display: inline-flex;
-  margin-top: 16px;
-  font-weight: 700;
-  color: var(--accent);
-  text-decoration: none;
+.profile-card .stat {
+  width: 100%;
 }
 
-.project-link:hover {
-  text-decoration: underline;
-}
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 60px;
+  }
 
-@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
   .profile-card {
-    max-width: 430px;
+    width: min(100%, 420px);
+    max-width: 420px;
     justify-self: center;
   }
 
   .profile-photo {
-    width: 220px;
-    height: 275px;
+    width: 200px !important;
+    height: 250px !important;
   }
 }
 
 @media (max-width: 560px) {
+  .container {
+    width: min(92%, 100%);
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .profile-card {
+    width: 100%;
+    padding: 18px;
+  }
+
   .profile-photo {
-    width: 190px;
-    height: 240px;
+    width: 170px !important;
+    height: 215px !important;
   }
 }
